@@ -40,7 +40,7 @@ Search.sendKeys(Keys.ENTER);
 List<WebElement> listing = driver.findElements(By.xpath("//*[@class='listing-results-price text-price']"));
 String myRegex = "[^0-9]";
 
-//Instantiation of ArrayList and HashTree
+//Instantiation of ArrayList and TreeSet
 
 ArrayList<Long>listing_list=new ArrayList<Long>();
 TreeSet<Long>listing_Set=new TreeSet<Long>();
@@ -48,7 +48,7 @@ TreeSet<Long>listing_Set=new TreeSet<Long>();
 //Converting PriceTags into Long values and adding to a list
 
 for (Iterator<WebElement> iterator = listing.iterator(); iterator.hasNext();) {
-	WebElement webElement = (WebElement)iterator.next();
+	WebElement webElement = iterator.next();
 	String S=webElement.getText();
 	String price=S.replaceAll(myRegex,"");
 	Long price_value=Long.parseLong(price);
@@ -60,7 +60,7 @@ for (Iterator<WebElement> iterator = listing.iterator(); iterator.hasNext();) {
 //Adding list of values into TreeSet
 
 for (Iterator<Long>iterator = listing_list.iterator(); iterator.hasNext();) {
-	Long listing_price_final = (Long) iterator.next();
+	Long listing_price_final = iterator.next();
 	listing_Set.add(listing_price_final);
 	
 }

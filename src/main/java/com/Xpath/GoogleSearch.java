@@ -23,9 +23,8 @@ public class GoogleSearch {
 		driver.findElement(By.xpath("//input[@title='Search']")).sendKeys("Testing");
 		//using Explicit wait to overcome Stale Element Exception.
 		
-		WebDriverWait ww = (WebDriverWait) new WebDriverWait(driver, 30);
+		WebDriverWait ww = new WebDriverWait(driver, 30);
 				
-		
 		try
 		{
 		ww.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
