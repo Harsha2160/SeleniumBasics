@@ -20,6 +20,7 @@ public class AlertHandling {
 		driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
 		driver.manage().window().maximize();
 		driver.findElement(By.xpath("//input[@type='submit']")).click();
+		//alert method which is part of Target Locator Interface returns Alert interface.
 		Alert alert=driver.switchTo().alert();
 		alert.accept();//to click on Ok. dismiss method will click on cancel.
 		

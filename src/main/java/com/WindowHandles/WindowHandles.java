@@ -28,7 +28,8 @@ public class WindowHandles {
 		while (it.hasNext()) {
 			String string = it.next();
 			System.out.println(string);
-			driver.switchTo().window(string);
+			WebDriver driver_new=driver.switchTo().window(string);
+			driver=driver_new;
 			try 
 			{
 				driver.findElement(By.xpath("//h1[text()='403 - Forbidden']"));
